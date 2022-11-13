@@ -1,5 +1,3 @@
-function hello() {
-  console.log("hello world")
-}
+import { Converter } from "./classes/Converter"
 
-export { hello }
+export { Converter }
