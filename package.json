@@ -1,6 +1,6 @@
 {
   "name": "submarin-converter-core-v2",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Help transform characters into different forms.",
   "type": "module",
   "types": "./dist/index.d.ts",
@@ -24,8 +24,16 @@
     "test": "vitest"
   },
   "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/souhait0614/submarin-converter-core-v2.git"
+  },
   "author": "souhait",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/souhait0614/submarin-converter-core-v2/issues"
+  },
+  "homepage": "https://github.com/souhait0614/submarin-converter-core-v2#readme",
   "devDependencies": {
     "@types/node": "^18.7.19",
     "@typescript-eslint/eslint-plugin": "^5.40.1",
