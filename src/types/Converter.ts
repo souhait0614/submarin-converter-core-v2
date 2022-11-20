@@ -11,6 +11,11 @@ export interface ConversionResult<T extends string> {
   error?: Error
 }
 
+export interface FullConversionResult<T extends string> {
+  resultText: string
+  conversionResults: ConversionResult<T>[]
+}
+
 export interface ConverterConfig<T extends string> {
   plugins: Plugins<T>
 }
