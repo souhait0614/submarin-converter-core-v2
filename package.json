@@ -1,13 +1,11 @@
 {
   "name": "submarin-converter-core-v2",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Help transform characters into different forms.",
   "type": "module",
   "types": "./dist/index.d.ts",
   "files": [
-    "/dist",
-    "/types",
-    "/src"
+    "/dist"
   ],
   "main": "/dist/index.umd.js",
   "module": "./dist/index.es.js",
