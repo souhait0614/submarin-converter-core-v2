@@ -19,10 +19,4 @@ describe("Converter", () => {
     ])
     expect(resultText).toEqual("ごんにさゎ。。。ぃぃ感じになﾘまずｶ???")
   })
-
-  // it("get", () => {
-  //   const values = [str, 0, false, undefined]
-  //   const targets = values.map((val) => createStore(val))
-  //   expect(targets.map((store) => store.get())).toEqual(values)
-  // })
 })
