@@ -21,7 +21,8 @@
     "fix": "npm-run-all -p fix:*",
     "fix:eslint": "eslint --fix src/",
     "fix:prettier": "prettier --write src/",
-    "test": "vitest"
+    "test": "vitest run",
+    "test-watch": "vitest"
   },
   "keywords": [],
   "repository": {
