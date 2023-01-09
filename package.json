@@ -16,7 +16,7 @@
     }
   },
   "scripts": {
-    "build": "vite build",
+    "build": "tsc && vite build",
     "prepublishOnly": "npm run test && npm run build",
     "fix": "npm-run-all -p fix:*",
     "fix:eslint": "eslint --fix src/",
