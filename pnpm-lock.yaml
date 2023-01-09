@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@tsconfig/strictest': ^1.0.2
   '@types/node': ^18.11.18
   '@typescript-eslint/eslint-plugin': ^5.48.1
   '@typescript-eslint/parser': ^5.48.1
@@ -23,6 +24,7 @@ specifiers:
   vitest: ^0.27.0
 
 devDependencies:
+  '@tsconfig/strictest': 1.0.2
   '@types/node': 18.11.18
   '@typescript-eslint/eslint-plugin': 5.48.1_3jon24igvnqaqexgwtxk6nkpse
   '@typescript-eslint/parser': 5.48.1_iukboom6ndih5an6iafl45j2fe
@@ -416,6 +418,10 @@ packages:
       minimatch: 5.1.0
       mkdirp: 1.0.4
       path-browserify: 1.0.1
+    dev: true
+
+  /@tsconfig/strictest/1.0.2:
+    resolution: {integrity: sha512-IRKlC8cnP7zMz1SDBjyIVyPapkEGWLZ6wkF6Z8T+xU80P9sO5uGXlIUvtzjx+7ehPJRWxkB6CeIDwUfyqNtYkQ==}
     dev: true
 
   /@types/argparse/1.0.38:

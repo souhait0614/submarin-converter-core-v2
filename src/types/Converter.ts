@@ -1,4 +1,4 @@
-import { PluginConvertOptions, Plugins } from "./Plugin"
+import type { PluginConvertOptions, Plugins } from "./Plugin"
 
 export interface ConversionOrder<T extends string> {
   converterId: T

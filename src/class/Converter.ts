@@ -1,5 +1,5 @@
-import { ConversionOrder, ConverterConfig, FullConversionResult } from "../types/Converter"
-import { Plugins } from "../types/Plugin"
+import type { ConversionOrder, ConverterConfig, FullConversionResult } from "../types/Converter"
+import type { Plugins } from "../types/Plugin"
 
 export class Converter<T extends string> {
   plugins: Plugins<T>
