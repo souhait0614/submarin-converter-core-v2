@@ -2,16 +2,17 @@ import { generate as cjpGenerate } from "cjp"
 import { generate as genheraGenerate } from "genhera"
 import { describe, expect, it } from "vitest"
 
-import { Converter } from "../src"
+import { Converter, Plugin } from "../src"
+import { makePluginList } from "../src/util"
 
 describe("Converter", () => {
   it("Convert", async () => {
-    const plugins = new Map([
-      ["cjp", { convert: (source: string) => cjpGenerate(source) }],
-      ["genhera", { convert: (source: string) => genheraGenerate(source) }],
-    ] as const)
+    const pluginList = makePluginList([
+      new Plugin({ name: "cjp", converter: (source: string) => cjpGenerate(source) }),
+      new Plugin({ name: "genhera", converter: (source: string) => genheraGenerate(source) }),
+    ])
     const converter = new Converter({
-      plugins,
+      pluginList,
     })
     const { resultText } = await converter.convert("こんにちは。いい感じになりますか？", [
       { converterId: "cjp" },

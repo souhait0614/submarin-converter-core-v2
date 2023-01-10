@@ -1,3 +1,5 @@
+import type { Plugin } from "../class/Plugin"
+
 export type PluginConvertOptions = Record<string, unknown>
 
 export type PluginConvertFunction = (
@@ -5,11 +7,4 @@ export type PluginConvertFunction = (
   options?: PluginConvertOptions
 ) => string | Promise<string>
 
-export interface Plugin {
-  name?: string
-  description?: string
-  version?: string
-  convert: PluginConvertFunction
-}
-
-export type Plugins<T extends string> = ReadonlyMap<T, Plugin>
+export type PluginList<T extends string> = ReadonlyMap<T, Plugin<T>>

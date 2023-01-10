@@ -1,11 +1,11 @@
 import type { ConversionOrder, ConverterConfig, FullConversionResult } from "../types/Converter"
-import type { Plugins } from "../types/Plugin"
+import type { PluginList } from "../types/Plugin"
 
 export class Converter<T extends string> {
-  plugins: Plugins<T>
+  #pluginList: PluginList<T>
 
   constructor(config: ConverterConfig<T>) {
-    this.plugins = config.plugins
+    this.#pluginList = config.pluginList
   }
 
   async convert(source: string, orderList: ConversionOrder<T>[]) {
@@ -16,7 +16,7 @@ export class Converter<T extends string> {
     return orderList.reduce<Promise<FullConversionResult<T>>>(async (prev, current) => {
       const { resultText, conversionResults } = await prev
       const { converterId, convertOptions } = current
-      const plugin = this.plugins.get(converterId)
+      const plugin = this.#pluginList.get(converterId)
 
       if (!plugin) {
         const conversionResult = {

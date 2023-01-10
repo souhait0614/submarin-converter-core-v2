@@ -1,4 +1,4 @@
-import type { PluginConvertOptions, Plugins } from "./Plugin"
+import type { PluginConvertOptions, PluginList } from "./Plugin"
 
 export interface ConversionOrder<T extends string> {
   converterId: T
@@ -17,5 +17,5 @@ export interface FullConversionResult<T extends string> {
 }
 
 export interface ConverterConfig<T extends string> {
-  plugins: Plugins<T>
+  pluginList: PluginList<T>
 }
