@@ -1,7 +1,7 @@
 import type { PluginConvertOptions, PluginList } from "./Plugin"
 
 export interface ConversionOrder<T extends string> {
-  converterId: T
+  pluginId: T
   convertOptions?: PluginConvertOptions
 }
 

@@ -1,7 +1,7 @@
 import type { PluginConvertFunction, PluginConvertOptions } from "../types/Plugin"
 
 export class Plugin<T extends string> {
-  #name: T
+  #id: T
 
   #description: string | undefined
 
@@ -10,19 +10,19 @@ export class Plugin<T extends string> {
   #converter: PluginConvertFunction
 
   constructor(props: {
-    name: T
+    id: T
     description?: string
     version?: string
     converter: PluginConvertFunction
   }) {
-    this.#name = props.name
+    this.#id = props.id
     this.#description = props.description
     this.#version = props.version
     this.#converter = props.converter
   }
 
-  get name() {
-    return this.#name
+  get id() {
+    return this.#id
   }
 
   get description() {

@@ -19,14 +19,14 @@ export class Converter<T extends string> {
     }
     return orderList.reduce<Promise<FullConversionResult<T>>>(async (prev, current) => {
       const { convertedText, conversionResults } = await prev
-      const { converterId, convertOptions } = current
-      const plugin = this.#pluginList.get(converterId)
+      const { pluginId, convertOptions } = current
+      const plugin = this.#pluginList.get(pluginId)
 
       if (!plugin) {
         const conversionResult = {
           convertedText,
           order: current,
-          error: new Error(`The plugin "${converterId}" was not found`),
+          error: new Error(`The plugin "${pluginId}" was not found`),
         }
         const result: FullConversionResult<T> = {
           convertedText,
