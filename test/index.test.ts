@@ -2,8 +2,7 @@ import { generate as cjpGenerate } from "cjp"
 import { generate as genheraGenerate } from "genhera"
 import { describe, expect, it } from "vitest"
 
-import { Converter, Plugin } from "../src"
-import { makePluginList } from "../src/util"
+import { Converter, Plugin, makePluginList } from "../src"
 
 describe("Converter", () => {
   it("Convert", async () => {
