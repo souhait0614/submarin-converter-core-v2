@@ -8,6 +8,10 @@ export class Converter<T extends string> {
     this.#pluginList = config.pluginList
   }
 
+  get pluginList() {
+    return this.#pluginList
+  }
+
   async convert(source: string, orderList: ConversionOrder<T>[]) {
     const initValue: FullConversionResult<T> = {
       convertedText: source,
