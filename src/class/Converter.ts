@@ -10,35 +10,35 @@ export class Converter<T extends string> {
 
   async convert(source: string, orderList: ConversionOrder<T>[]) {
     const initValue: FullConversionResult<T> = {
-      resultText: source,
+      convertedText: source,
       conversionResults: [],
     }
     return orderList.reduce<Promise<FullConversionResult<T>>>(async (prev, current) => {
-      const { resultText, conversionResults } = await prev
+      const { convertedText, conversionResults } = await prev
       const { converterId, convertOptions } = current
       const plugin = this.#pluginList.get(converterId)
 
       if (!plugin) {
         const conversionResult = {
-          resultText,
+          convertedText,
           order: current,
           error: new Error(`The plugin "${converterId}" was not found`),
         }
         const result: FullConversionResult<T> = {
-          resultText,
+          convertedText,
           conversionResults: [...conversionResults, conversionResult],
         }
         return result
       }
 
-      const convertedText = await plugin.convert(resultText, convertOptions)
+      const tempConvertedText = await plugin.convert(convertedText, convertOptions)
 
       const conversionResult = {
-        resultText: convertedText,
+        convertedText: tempConvertedText,
         order: current,
       }
       const result: FullConversionResult<T> = {
-        resultText: convertedText,
+        convertedText: tempConvertedText,
         conversionResults: [...conversionResults, conversionResult],
       }
       return result

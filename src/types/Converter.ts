@@ -6,13 +6,13 @@ export interface ConversionOrder<T extends string> {
 }
 
 export interface ConversionResult<T extends string> {
-  resultText: string
+  convertedText: string
   order: ConversionOrder<T>
   error?: Error
 }
 
 export interface FullConversionResult<T extends string> {
-  resultText: string
+  convertedText: string
   conversionResults: ConversionResult<T>[]
 }
 

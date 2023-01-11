@@ -13,10 +13,10 @@ describe("Converter", () => {
     const converter = new Converter({
       pluginList,
     })
-    const { resultText } = await converter.convert("こんにちは。いい感じになりますか？", [
+    const { convertedText } = await converter.convert("こんにちは。いい感じになりますか？", [
       { converterId: "cjp" },
       { converterId: "genhera" },
     ])
-    expect(resultText).toEqual("ごんにさゎ。。。ぃぃ感じになﾘまずｶ???")
+    expect(convertedText).toEqual("ごんにさゎ。。。ぃぃ感じになﾘまずｶ???")
   })
 })
