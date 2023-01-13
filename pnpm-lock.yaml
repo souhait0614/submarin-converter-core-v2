@@ -5,7 +5,6 @@ specifiers:
   '@types/node': ^18.11.18
   '@typescript-eslint/eslint-plugin': ^5.48.1
   '@typescript-eslint/parser': ^5.48.1
-  cjp: ^2.3.0
   eslint: ^8.31.0
   eslint-config-airbnb-base: ^15.0.0
   eslint-config-airbnb-typescript: ^17.0.0
@@ -14,7 +13,6 @@ specifiers:
   eslint-plugin-import: ^2.26.0
   eslint-plugin-jsdoc: ^39.6.4
   eslint-plugin-unused-imports: ^2.0.0
-  genhera: ^1.1.0
   npm-run-all: ^4.1.5
   prettier: ^2.8.2
   prettier-plugin-jsdoc: ^0.4.2
@@ -28,7 +26,6 @@ devDependencies:
   '@types/node': 18.11.18
   '@typescript-eslint/eslint-plugin': 5.48.1_3jon24igvnqaqexgwtxk6nkpse
   '@typescript-eslint/parser': 5.48.1_iukboom6ndih5an6iafl45j2fe
-  cjp: 2.3.0
   eslint: 8.31.0
   eslint-config-airbnb-base: 15.0.0_ol7jqilc3wemtdbq3nzhywgxq4
   eslint-config-airbnb-typescript: 17.0.0_2zlw3x3sr6whguaqnvgpdh2zra
@@ -37,7 +34,6 @@ devDependencies:
   eslint-plugin-import: 2.26.0_gbkhlznmxx34wjvsmktbfghs7m
   eslint-plugin-jsdoc: 39.6.4_eslint@8.31.0
   eslint-plugin-unused-imports: 2.0.0_uf7m4ztohkds2teixkkgz7tcvi
-  genhera: 1.1.0
   npm-run-all: 4.1.5
   prettier: 2.8.2
   prettier-plugin-jsdoc: 0.4.2_prettier@2.8.2
@@ -405,10 +401,6 @@ packages:
       argparse: 1.0.10
       colors: 1.2.5
       string-argv: 0.3.1
-    dev: true
-
-  /@submarin/generator/1.0.0:
-    resolution: {integrity: sha512-XuBVSRN5XGzVJYyrBj+pFo3GmubpKwWoRfyhO6p/VuCHAQ7zpPU+0k6Yuiw0pauWIsuJwdcRWhZgRXIxG2kalA==}
     dev: true
 
   /@ts-morph/common/0.17.0:
@@ -789,10 +781,6 @@ packages:
 
   /check-error/1.0.2:
     resolution: {integrity: sha512-BrgHpW9NURQgzoNyjfq0Wu6VFO6D7IZEmJNdtgNqpzGG8RuNFHt2jQxWlAs4HMe119chBnv+34syEZtc6IhLtA==}
-    dev: true
-
-  /cjp/2.3.0:
-    resolution: {integrity: sha512-BZ95TJneuWqbPFDC68vZg2VzQieJhbaxIM7Z3Ds3c+qHI1+7watcUL5eIQAGmShMvKnTbqJD/pLXSANScyxgFA==}
     dev: true
 
   /code-block-writer/11.0.3:
@@ -1460,12 +1448,6 @@ packages:
 
   /functions-have-names/1.2.3:
     resolution: {integrity: sha512-xckBUXyTIqT97tq2x2AMb+g163b5JFysYk0x4qxNFwbfQkmNZoiRHb6sPzI9/QV33WeuvVYBUIiD4NzNIyqaRQ==}
-    dev: true
-
-  /genhera/1.1.0:
-    resolution: {integrity: sha512-dSBDvfde489r876QaBIVx8fOzYI3JSgg/qvnit0GzGkrOoCn5zvKiQYlgIe2a3YqxM37vWWJ9yb+ze4Zdv127A==}
-    dependencies:
-      '@submarin/generator': 1.0.0
     dev: true
 
   /get-func-name/2.0.0:
