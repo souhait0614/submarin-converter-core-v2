@@ -1,4 +1,9 @@
-import type { ConversionOrder, ConverterConfig, FullConversionResult } from "../types/Converter"
+import type {
+  ConversionOrder,
+  ConversionResult,
+  ConverterConfig,
+  FullConversionResult,
+} from "../types/Converter"
 import type { PluginList } from "../types/Plugin"
 
 export class Converter<T extends string> {
@@ -23,10 +28,10 @@ export class Converter<T extends string> {
       const plugin = this.#pluginList.get(pluginId)
 
       if (!plugin) {
-        const conversionResult = {
+        const conversionResult: ConversionResult<T> = {
           convertedText,
           order: current,
-          error: new Error(`The plugin "${pluginId}" was not found`),
+          conversionError: new Error(`The plugin "${pluginId}" was not found`),
         }
         const result: FullConversionResult<T> = {
           convertedText,
@@ -35,12 +40,16 @@ export class Converter<T extends string> {
         return result
       }
 
-      const tempConvertedText = await plugin.convert(convertedText, convertOptions)
+      const { convertedText: tempConvertedText, conversionError } = await plugin.convert(
+        convertedText,
+        convertOptions
+      )
 
-      const conversionResult = {
+      const conversionResult: ConversionResult<T> = {
         convertedText: tempConvertedText,
         order: current,
       }
+      if (conversionError) conversionResult.conversionError = conversionError
       const result: FullConversionResult<T> = {
         convertedText: tempConvertedText,
         conversionResults: [...conversionResults, conversionResult],

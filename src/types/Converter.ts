@@ -8,7 +8,7 @@ export interface ConversionOrder<T extends string> {
 export interface ConversionResult<T extends string> {
   convertedText: string
   order: ConversionOrder<T>
-  error?: Error
+  conversionError?: Error | Error[]
 }
 
 export interface FullConversionResult<T extends string> {
