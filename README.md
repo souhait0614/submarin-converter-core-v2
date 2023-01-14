@@ -1,5 +1,7 @@
 # submarin-converter-core-v2
 
+![npm](https://img.shields.io/npm/v/submarin-converter-core-v2?style=flat-square)
+
 高い拡張性と使いやすさを重視した TypeScript 製文字変換補助ライブラリ(になる予定)
 
 ## Example
@@ -23,6 +25,14 @@ const { convertedText } = await converter.convert(source, [
 ])
 
 console.log(convertedText) // THIS IS A VERY COOOOOOOOOOL LIBRARY.
+```
+
+## Installation
+
+```shell
+npm install submarin-converter-core-v2
+# or yarn add submarin-converter-core-v2
+# or pnpm add submarin-converter-core-v2
 ```
 
 ## [Docs](https://souhait0614.github.io/submarin-converter-core-v2/)
