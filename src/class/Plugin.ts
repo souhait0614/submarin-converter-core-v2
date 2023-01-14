@@ -11,13 +11,13 @@ export class Plugin<T extends string> {
 
   #version: string | undefined
 
-  #converter: PluginConvertFunction | PluginConvertFunction[]
+  #converter: PluginConvertFunction[]
 
   constructor(props: {
     id: T
     description?: string
     version?: string
-    converter: PluginConvertFunction | PluginConvertFunction[]
+    converter: PluginConvertFunction[]
   }) {
     this.#id = props.id
     this.#description = props.description
@@ -38,19 +38,6 @@ export class Plugin<T extends string> {
   }
 
   async convert(source: string, options?: PluginConvertOptions): Promise<PluginConvertResult> {
-    if (!Array.isArray(this.#converter)) {
-      try {
-        return {
-          convertedText: await this.#converter(source, options),
-        }
-      } catch (e) {
-        const conversionError = e instanceof Error ? e : new Error("Unknown Error")
-        return {
-          convertedText: source,
-          conversionError,
-        }
-      }
-    }
     const conversionError: Error[] = []
 
     // TODO もっといい方法を見つけたら置き換える
@@ -58,7 +45,7 @@ export class Plugin<T extends string> {
     for await (const converter of this.#converter) {
       try {
         const result: PluginConvertResult = {
-          convertedText: await converter(source),
+          convertedText: await converter(source, options),
         }
         if (conversionError.length) result.conversionError = conversionError
         return result

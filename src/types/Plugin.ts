@@ -4,7 +4,7 @@ export type PluginConvertOptions = Record<string, unknown>
 
 export interface PluginConvertResult {
   convertedText: string
-  conversionError?: Error | Error[]
+  conversionError?: Error[]
 }
 
 export type PluginConvertFunction = (
