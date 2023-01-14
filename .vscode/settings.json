@@ -1,0 +1,8 @@
+{
+  "cSpell.words": ["genhera", "submarin"],
+  "editor.formatOnSave": true,
+  "eslint.format.enable": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}

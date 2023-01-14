@@ -1,0 +1,61 @@
+{
+  "name": "submarin-converter-core-v2",
+  "version": "0.1.0",
+  "description": "Help transform characters into different forms.",
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "main": "/dist/index.umd.js",
+  "module": "./dist/index.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc && vite build",
+    "prepublishOnly": "npm run test && npm run build",
+    "fix": "npm-run-all -p fix:*",
+    "fix:eslint": "eslint --fix src/",
+    "fix:prettier": "prettier --write src/",
+    "test": "vitest run",
+    "test-watch": "vitest",
+    "doc": "typedoc"
+  },
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/souhait0614/submarin-converter-core-v2.git"
+  },
+  "author": "souhait",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/souhait0614/submarin-converter-core-v2/issues"
+  },
+  "homepage": "https://github.com/souhait0614/submarin-converter-core-v2#readme",
+  "devDependencies": {
+    "@tsconfig/strictest": "^1.0.2",
+    "@types/node": "^18.11.18",
+    "@typescript-eslint/eslint-plugin": "^5.48.1",
+    "@typescript-eslint/parser": "^5.48.1",
+    "eslint": "^8.31.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-import-resolver-typescript": "^3.5.2",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsdoc": "^39.6.4",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.8.2",
+    "prettier-plugin-jsdoc": "^0.4.2",
+    "typedoc": "^0.23.24",
+    "typescript": "^4.9.4",
+    "vite": "^4.0.4",
+    "vite-plugin-dts": "^1.7.1",
+    "vitest": "^0.27.0"
+  }
+}
