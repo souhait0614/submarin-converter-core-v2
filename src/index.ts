@@ -3,10 +3,10 @@ import { Plugin } from "./class/Plugin"
 import { makePluginList } from "./util"
 
 import type {
-  ConversionOrder,
-  ConversionResult,
+  ConvertOrder,
+  ConvertResult,
   ConverterConfig,
-  FullConversionResult,
+  FullConvertResult,
 } from "./types/Converter"
 import type {
   PluginList,
@@ -22,7 +22,7 @@ export { Converter, Plugin }
 export { makePluginList }
 
 // Type Converter
-export type { ConversionOrder, ConversionResult, ConverterConfig, FullConversionResult }
+export type { ConvertOrder, ConvertResult, ConverterConfig, FullConvertResult }
 
 // Type Plugin
 export type { PluginList, PluginConvertFunction, PluginConvertOptions, PluginConvertResult }
