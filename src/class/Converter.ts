@@ -1,8 +1,8 @@
 import type {
-  ConversionOrder,
-  ConversionResult,
+  ConvertOrder,
+  ConvertResult,
   ConverterConfig,
-  FullConversionResult,
+  FullConvertResult,
 } from "../types/Converter"
 import type { PluginList } from "../types/Plugin"
 
@@ -17,23 +17,23 @@ export class Converter<T extends string> {
     return this.#pluginList
   }
 
-  async convert(source: string, orderList: ConversionOrder<T>[]) {
-    const initValue: FullConversionResult<T> = {
+  async convert(source: string, orderList: ConvertOrder<T>[]) {
+    const initValue: FullConvertResult<T> = {
       convertedText: source,
       conversionResults: [],
     }
-    return orderList.reduce<Promise<FullConversionResult<T>>>(async (prev, current) => {
+    return orderList.reduce<Promise<FullConvertResult<T>>>(async (prev, current) => {
       const { convertedText, conversionResults } = await prev
       const { pluginId, convertOptions } = current
       const plugin = this.#pluginList.get(pluginId)
 
       if (!plugin) {
-        const conversionResult: ConversionResult<T> = {
+        const conversionResult: ConvertResult<T> = {
           convertedText,
           order: current,
           conversionError: new Error(`The plugin "${pluginId}" was not found`),
         }
-        const result: FullConversionResult<T> = {
+        const result: FullConvertResult<T> = {
           convertedText,
           conversionResults: [...conversionResults, conversionResult],
         }
@@ -45,12 +45,12 @@ export class Converter<T extends string> {
         convertOptions
       )
 
-      const conversionResult: ConversionResult<T> = {
+      const conversionResult: ConvertResult<T> = {
         convertedText: tempConvertedText,
         order: current,
       }
       if (conversionError) conversionResult.conversionError = conversionError
-      const result: FullConversionResult<T> = {
+      const result: FullConvertResult<T> = {
         convertedText: tempConvertedText,
         conversionResults: [...conversionResults, conversionResult],
       }

@@ -1,19 +1,19 @@
 import type { PluginConvertOptions, PluginList } from "./Plugin"
 
-export interface ConversionOrder<T extends string> {
+export interface ConvertOrder<T extends string> {
   pluginId: T
   convertOptions?: PluginConvertOptions
 }
 
-export interface ConversionResult<T extends string> {
+export interface ConvertResult<T extends string> {
   convertedText: string
-  order: ConversionOrder<T>
+  order: ConvertOrder<T>
   conversionError?: Error | Error[]
 }
 
-export interface FullConversionResult<T extends string> {
+export interface FullConvertResult<T extends string> {
   convertedText: string
-  conversionResults: ConversionResult<T>[]
+  conversionResults: ConvertResult<T>[]
 }
 
 export interface ConverterConfig<T extends string> {
