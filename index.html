@@ -12,7 +12,36 @@
 <div class="col-8 col-content">
 <div class="tsd-page-title">
 <h2>submarin-converter-core-v2</h2></div>
-<div class="tsd-panel tsd-typography"></div></div>
+<div class="tsd-panel tsd-typography">
+<a href="#submarin-converter-core-v2" id="submarin-converter-core-v2" style="color: inherit; text-decoration: none;">
+  <h1>submarin-converter-core-v2</h1>
+</a>
+<p><img src="https://img.shields.io/npm/v/submarin-converter-core-v2?style=flat-square" alt="npm"></p>
+<p>高い拡張性と使いやすさを重視した TypeScript 製文字変換補助ライブラリ(になる予定)</p>
+
+<a href="#example" id="example" style="color: inherit; text-decoration: none;">
+  <h2>Example</h2>
+</a>
+<pre><code class="language-typescript"><span class="hl-0">const</span><span class="hl-1"> </span><span class="hl-2">exampleConverter1</span><span class="hl-1"> = (</span><span class="hl-3">source</span><span class="hl-1">: </span><span class="hl-4">string</span><span class="hl-1">) </span><span class="hl-0">=&gt;</span><span class="hl-1"> </span><span class="hl-3">source</span><span class="hl-1">.</span><span class="hl-2">toUpperCase</span><span class="hl-1">()</span><br/><span class="hl-0">const</span><span class="hl-1"> </span><span class="hl-2">exampleConverter2</span><span class="hl-1"> = (</span><span class="hl-3">source</span><span class="hl-1">: </span><span class="hl-4">string</span><span class="hl-1">) </span><span class="hl-0">=&gt;</span><span class="hl-1"> </span><span class="hl-3">source</span><span class="hl-1">.</span><span class="hl-2">replaceAll</span><span class="hl-1">(</span><span class="hl-5">&quot;O&quot;</span><span class="hl-1">, </span><span class="hl-5">&quot;OOOOO&quot;</span><span class="hl-1">)</span><br/><br/><span class="hl-0">const</span><span class="hl-1"> </span><span class="hl-6">source</span><span class="hl-1"> = </span><span class="hl-5">&quot;This is a very cool library.&quot;</span><br/><br/><span class="hl-0">const</span><span class="hl-1"> </span><span class="hl-6">converter</span><span class="hl-1"> = </span><span class="hl-0">new</span><span class="hl-1"> </span><span class="hl-2">Converter</span><span class="hl-1">({</span><br/><span class="hl-1">  </span><span class="hl-3">pluginList:</span><span class="hl-1"> </span><span class="hl-2">makePluginList</span><span class="hl-1">([</span><br/><span class="hl-1">    </span><span class="hl-0">new</span><span class="hl-1"> </span><span class="hl-2">Plugin</span><span class="hl-1">({ </span><span class="hl-3">id:</span><span class="hl-1"> </span><span class="hl-5">&quot;example1&quot;</span><span class="hl-1">, </span><span class="hl-3">converter:</span><span class="hl-1"> [</span><span class="hl-3">exampleConverter1</span><span class="hl-1">] }),</span><br/><span class="hl-1">    </span><span class="hl-0">new</span><span class="hl-1"> </span><span class="hl-2">Plugin</span><span class="hl-1">({ </span><span class="hl-3">id:</span><span class="hl-1"> </span><span class="hl-5">&quot;example2&quot;</span><span class="hl-1">, </span><span class="hl-3">converter:</span><span class="hl-1"> [</span><span class="hl-3">exampleConverter2</span><span class="hl-1">] }),</span><br/><span class="hl-1">  ]),</span><br/><span class="hl-1">})</span><br/><br/><span class="hl-0">const</span><span class="hl-1"> { </span><span class="hl-6">convertedText</span><span class="hl-1"> } = </span><span class="hl-7">await</span><span class="hl-1"> </span><span class="hl-3">converter</span><span class="hl-1">.</span><span class="hl-2">convert</span><span class="hl-1">(</span><span class="hl-3">source</span><span class="hl-1">, [</span><br/><span class="hl-1">  { </span><span class="hl-3">pluginId:</span><span class="hl-1"> </span><span class="hl-5">&quot;example1&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">  { </span><span class="hl-3">pluginId:</span><span class="hl-1"> </span><span class="hl-5">&quot;example2&quot;</span><span class="hl-1"> },</span><br/><span class="hl-1">])</span><br/><br/><span class="hl-3">console</span><span class="hl-1">.</span><span class="hl-2">log</span><span class="hl-1">(</span><span class="hl-3">convertedText</span><span class="hl-1">) </span><span class="hl-8">// THIS IS A VERY COOOOOOOOOOL LIBRARY.</span>
+</code></pre>
+
+<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
+  <h2>Installation</h2>
+</a>
+<pre><code class="language-shell"><span class="hl-1">npm </span><span class="hl-5">install</span><span class="hl-1"> </span><span class="hl-5">submarin-converter-core-v2</span><br/><span class="hl-8"># or yarn add submarin-converter-core-v2</span><br/><span class="hl-8"># or pnpm add submarin-converter-core-v2</span>
+</code></pre>
+
+<a href="#docs" id="docs" style="color: inherit; text-decoration: none;">
+  <h2><a href="https://souhait0614.github.io/submarin-converter-core-v2/">Docs</a></h2>
+</a>
+<p>詳細は<a href="https://souhait0614.github.io/submarin-converter-core-v2/">こちら</a></p>
+
+<a href="#development" id="development" style="color: inherit; text-decoration: none;">
+  <h2>Development</h2>
+</a>
+<pre><code class="language-shell"><span class="hl-1">git </span><span class="hl-5">clone</span><span class="hl-1"> </span><span class="hl-5">https://github.com/souhait0614/submarin-converter-core-v2.git</span><br/><span class="hl-2">cd</span><span class="hl-1"> </span><span class="hl-5">submarin-converter-core-v2</span><br/><span class="hl-1">pnpm </span><span class="hl-5">i</span><br/><span class="hl-1">pnpm </span><span class="hl-5">test</span>
+</code></pre>
+</div></div>
 <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 <div class="tsd-navigation settings">
 <details class="tsd-index-accordion"><summary class="tsd-accordion-summary">
@@ -41,6 +70,8 @@
 <li class="tsd-kind-interface"><a href="interfaces/ConversionOrder.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-interface)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6" id="icon-256-path"></rect><path d="M9.51 16V15.016H11.298V8.224H9.51V7.24H14.19V8.224H12.402V15.016H14.19V16H9.51Z" fill="var(--color-text)" id="icon-256-text"></path></svg>Conversion<wbr/>Order</a></li>
 <li class="tsd-kind-interface"><a href="interfaces/ConversionResult.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg>Conversion<wbr/>Result</a></li>
 <li class="tsd-kind-interface"><a href="interfaces/ConverterConfig.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg>Converter<wbr/>Config</a></li>
+<li class="tsd-kind-interface"><a href="interfaces/FullConversionResult.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg>Full<wbr/>Conversion<wbr/>Result</a></li>
+<li class="tsd-kind-interface"><a href="interfaces/PluginConvertResult.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg>Plugin<wbr/>Convert<wbr/>Result</a></li>
 <li class="tsd-kind-type-alias"><a href="types/PluginConvertFunction.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="var(--color-ts)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6" id="icon-4194304-path"></rect><path d="M11.31 16V8.224H8.91V7.24H14.79V8.224H12.39V16H11.31Z" fill="var(--color-text)" id="icon-4194304-text"></path></svg>Plugin<wbr/>Convert<wbr/>Function</a></li>
 <li class="tsd-kind-type-alias"><a href="types/PluginConvertOptions.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4194304-path"></use><use href="#icon-4194304-text"></use></svg>Plugin<wbr/>Convert<wbr/>Options</a></li>
 <li class="tsd-kind-type-alias"><a href="types/PluginList.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4194304-path"></use><use href="#icon-4194304-text"></use></svg>Plugin<wbr/>List</a></li>
