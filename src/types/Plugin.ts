@@ -12,4 +12,4 @@ export type PluginConvertFunction = (
   options?: PluginConvertOptions
 ) => string | Promise<string>
 
-export type PluginList<T extends string> = ReadonlyMap<T, Plugin<T>>
+export type PluginList<T extends string> = { [pluginId in T]: Plugin<T> }

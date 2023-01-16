@@ -25,7 +25,7 @@ export class Converter<T extends string> {
     return orderList.reduce<Promise<FullConvertResult<T>>>(async (prev, current) => {
       const { convertedText, conversionResults } = await prev
       const { pluginId, convertOptions } = current
-      const plugin = this.#pluginList.get(pluginId)
+      const plugin = this.#pluginList[pluginId]
 
       if (!plugin) {
         const conversionResult: ConvertResult<T> = {
