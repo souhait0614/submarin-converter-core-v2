@@ -11,7 +11,8 @@
     "declaration": true,
     "declarationMap": true,
     "declarationDir": "./types",
-    "noEmit": true
+    "noEmit": true,
+    "preserveSymlinks": true
   },
   "include": ["./src", "./test"]
 }
