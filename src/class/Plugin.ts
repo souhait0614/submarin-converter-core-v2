@@ -4,8 +4,8 @@ import type {
   PluginConvertResult,
 } from "../types/Plugin"
 
-export class Plugin<T extends string> {
-  #id: T
+export class Plugin {
+  #name: string | undefined
 
   #description: string | undefined
 
@@ -14,19 +14,19 @@ export class Plugin<T extends string> {
   #converter: PluginConvertFunction[]
 
   constructor(props: {
-    id: T
+    name?: string
     description?: string
     version?: string
     converter: PluginConvertFunction[]
   }) {
-    this.#id = props.id
+    this.#name = props.name
     this.#description = props.description
     this.#version = props.version
     this.#converter = props.converter
   }
 
-  get id() {
-    return this.#id
+  get name() {
+    return this.#name
   }
 
   get description() {
