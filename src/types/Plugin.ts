@@ -1,6 +1,7 @@
 import type { Plugin } from "../class/Plugin"
 
-export type PluginConvertOptions = Record<string, unknown>
+// TODO オプション周りの型定義をいい感じ™にしたい
+export type PluginConvertOptions = unknown
 
 export interface PluginConvertResult {
   convertedText: string
