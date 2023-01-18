@@ -1,6 +1,6 @@
 {
   "name": "submarin-converter-core-v2",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Help transform characters into different forms.",
   "type": "module",
   "types": "./dist/index.d.ts",
