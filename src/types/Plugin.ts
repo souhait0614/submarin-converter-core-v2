@@ -1,6 +1,6 @@
 import type { Plugin } from "../class/Plugin"
 
-// TODO オプション周りの型定義をいい感じ™にしたい
+// TODO #1 オプション周りの型定義をいい感じ™にしたい
 export type PluginConvertOptions = unknown
 
 export interface PluginConvertResult {
