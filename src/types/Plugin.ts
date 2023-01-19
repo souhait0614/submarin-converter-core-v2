@@ -1,7 +1,7 @@
 import type { Plugin } from "../class/Plugin"
 
 // TODO #1 オプション周りの型定義をいい感じ™にしたい
-export type PluginConvertOptions = unknown
+export type PluginConvertOptions = any
 
 export interface PluginConvertResult {
   convertedText: string
