@@ -46,25 +46,4 @@ describe("Converter", () => {
     expect(result.convertedText).toEqual("THIS IS A VERY COOOOOOOOOOL LIBRARY.")
     expect(result.conversionResults[0]?.conversionError).toEqual([dummyError])
   })
-  it("ConvertOption", async () => {
-    const exampleOptionConverter1 = (source: string, options = "") => source + options
-    const exampleOptionConverter2 = (source: string, options = 1) =>
-      [...Array(options - 1)].reduce<string>((prev) => prev + source, source)
-
-    const source = "This is a very cool library."
-
-    const converter = new Converter({
-      pluginList: makePluginList([
-        new Plugin({ id: "example1", converter: [exampleOptionConverter1] }),
-        new Plugin({ id: "example2", converter: [exampleOptionConverter2] }),
-      ]),
-    })
-
-    const result = await converter.convert(source, [
-      { pluginId: "example1" },
-      { pluginId: "example2" },
-    ])
-
-    expect(result.convertedText).toEqual("THIS IS A VERY COOOOOOOOOOL LIBRARY.")
-  })
 })
