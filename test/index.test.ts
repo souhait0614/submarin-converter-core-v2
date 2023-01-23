@@ -51,7 +51,7 @@ describe("Converter", () => {
     const exampleOptionConverter2 = (source: string, options = 1) =>
       [...Array(options - 1)].reduce<string>((prev) => prev + source, source)
 
-    const source = "This is a very cool library."
+    const source = "very "
 
     const converter = new Converter({
       pluginList: {
@@ -61,10 +61,10 @@ describe("Converter", () => {
     })
 
     const result = await converter.convert(source, [
-      { pluginId: "example1", convertOptions: "" },
-      { pluginId: "example2", convertOptions: 1 },
+      { pluginId: "example2", convertOptions: 5 },
+      { pluginId: "example1", convertOptions: "cool library." },
     ])
 
-    expect(result.convertedText).toEqual("THIS IS A VERY COOOOOOOOOOL LIBRARY.")
+    expect(result.convertedText).toEqual("very very very very very cool library.")
   })
 })
