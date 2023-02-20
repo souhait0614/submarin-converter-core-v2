@@ -1,23 +1,22 @@
 import type {
   PluginConvertFunction,
-  PluginConvertOptions,
   PluginConvertResult,
 } from "../types/Plugin"
 
-export class Plugin {
+export class Plugin<T> {
   #name: string | undefined
 
   #description: string | undefined
 
   #version: string | undefined
 
-  #converter: PluginConvertFunction[]
+  #converter: PluginConvertFunction<T>[]
 
   constructor(props: {
     name?: string
     description?: string
     version?: string
-    converter: PluginConvertFunction[]
+    converter: PluginConvertFunction<T>[]
   }) {
     this.#name = props.name
     this.#description = props.description
@@ -37,7 +36,7 @@ export class Plugin {
     return this.#version
   }
 
-  async convert(source: string, options?: PluginConvertOptions): Promise<PluginConvertResult> {
+  async convert(source: string, options?: T): Promise<PluginConvertResult> {
     const conversionError: Error[] = []
 
     // TODO もっといい方法を見つけたら置き換える

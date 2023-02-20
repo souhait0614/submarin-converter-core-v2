@@ -6,8 +6,8 @@ import type {
 } from "../types/Converter"
 import type { PluginList } from "../types/Plugin"
 
-export class Converter<T extends string> {
-  #pluginList: PluginList<T>
+export class Converter<T extends PluginList> {
+  #pluginList: T
 
   constructor(config: ConverterConfig<T>) {
     this.#pluginList = config.pluginList
@@ -17,7 +17,7 @@ export class Converter<T extends string> {
     return this.#pluginList
   }
 
-  async convert(source: string, orderList: ConvertOrder<T>[]) {
+  async convert(source: string, orderList: ConvertOrder<T, keyof T>[]) {
     const initValue: FullConvertResult<T> = {
       convertedText: source,
       conversionResults: [],
@@ -31,7 +31,7 @@ export class Converter<T extends string> {
         const conversionResult: ConvertResult<T> = {
           convertedText,
           order: current,
-          conversionError: new Error(`The plugin "${pluginId}" was not found`),
+          conversionError: new Error(`The plugin "${String(pluginId)}" was not found`),
         }
         const result: FullConvertResult<T> = {
           convertedText,

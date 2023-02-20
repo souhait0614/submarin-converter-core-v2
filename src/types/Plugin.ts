@@ -1,16 +1,13 @@
 import type { Plugin } from "../class/Plugin"
 
-// TODO #1 オプション周りの型定義をいい感じ™にしたい
-export type PluginConvertOptions = any
-
 export interface PluginConvertResult {
   convertedText: string
   conversionError?: Error[]
 }
 
-export type PluginConvertFunction = (
+export type PluginConvertFunction<T> = (
   source: string,
-  options?: PluginConvertOptions
+  options?: T
 ) => string | Promise<string>
 
-export type PluginList<T extends string> = { [pluginId in T]: Plugin }
+export type PluginList = { [pluginId: PropertyKey]: Plugin<any> }

@@ -57,7 +57,7 @@ describe("Converter", () => {
       pluginList: {
         example1: new Plugin({ converter: [exampleOptionConverter1] }),
         example2: new Plugin({ converter: [exampleOptionConverter2] }),
-      },
+      } as const,
     })
 
     const result = await converter.convert(source, [
