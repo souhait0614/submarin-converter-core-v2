@@ -1,3 +1,5 @@
+use [submarin-converter](https://github.com/souhait0614/submarin-converter)
+
 # submarin-converter-core-v2
 
 ![npm](https://img.shields.io/npm/v/submarin-converter-core-v2?style=flat-square)
